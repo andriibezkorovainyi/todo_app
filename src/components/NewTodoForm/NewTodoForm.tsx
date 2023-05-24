@@ -1,4 +1,5 @@
 import React, { FC, useContext, useState } from 'react';
+import classNames from 'classnames';
 import { getTodos, sendNewTodo, toggleTodoStatus } from '../../api/todos';
 import { AppTodoContext } from '../../contexts/AppTodoContext';
 import { USER_ID } from '../../react-app-env';
@@ -84,7 +85,10 @@ export const NewTodoForm: FC = () => {
         disabled={completedTodos.length !== todos.length}
         aria-label="toggle all active"
         type="button"
-        className={`todoapp__toggle-all ${completedTodos.length === todos.length && 'active'}`}
+        className={classNames(
+          'todoapp__toggle-all',
+          { active: todos.length === completedTodos.length },
+        )}
         onClick={handleToggleAll}
       />
 

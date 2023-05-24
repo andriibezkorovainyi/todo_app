@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import {
   FC, useContext, useState,
 } from 'react';
@@ -72,10 +73,10 @@ export const TodoItem: FC<Props> = (
 
   return (
     <div
-      className={
-      'todo'
-      + (completed ? ' completed' : '')
-    }
+      className={classNames(
+        'todo',
+        { completed },
+      )}
     >
 
       <label className="todo__status-label">
@@ -118,11 +119,11 @@ export const TodoItem: FC<Props> = (
         </button>
       )}
 
-      <div className={
-        'modal overlay'
-        + (isTodoProcessing(id) ? ' is-active' : '')
-        + (isTempTodo ? ' is-active' : '')
-      }
+      <div className={classNames(
+        'modal overlay',
+        { 'is-active': isTodoProcessing(id) },
+        { 'is-active': isTempTodo },
+      )}
       >
         <div className="modal-background has-background-white-ter" />
         <div className="loader" />

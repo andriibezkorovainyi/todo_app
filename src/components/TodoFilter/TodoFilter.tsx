@@ -1,6 +1,7 @@
 import {
   FC, useContext,
 } from 'react';
+import classNames from 'classnames';
 import { deleteTodo } from '../../api/todos';
 import { AppTodoContext } from '../../contexts/AppTodoContext';
 import {ErrorType, FilterType} from "../../types/enums";
@@ -52,9 +53,10 @@ export const TodoFilter: FC = () => {
             type="button"
             aria-label="filter button"
             key={filter as string}
-            className={
-            'filter__link' + (filterType === filter ? ' selected' : '')
-          }
+            className={classNames(
+              'filter__link',
+              { selected: filterType === filter },
+            )}
             onClick={() => handleFiltration(filter)}
           >
             {[filter]}

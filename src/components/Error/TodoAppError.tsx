@@ -1,6 +1,7 @@
 import {FC, useContext, useEffect} from 'react';
 import {AppTodoContext} from '../../contexts/AppTodoContext';
 import {ErrorType} from "../../types/enums";
+import classNames from "classnames";
 
 export const TodoAppError: FC = () => {
   const { errorMessage, setErrorMessage } = useContext(AppTodoContext);
@@ -21,10 +22,10 @@ export const TodoAppError: FC = () => {
 
   return (
     <div
-      className={
-      'notification is-danger is-light has-text-weight-normal'
-      + (errorMessage === ErrorType.NoError ? ' hidden' : '')
-    }
+      className={classNames(
+        'notification is-danger is-light has-text-weight-normal',
+        { hidden: errorMessage === ErrorType.NoError },
+      )}
     >
       <button
         aria-label="close button"
