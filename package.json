@@ -10,21 +10,19 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "mate-scripts deploy"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.1.2",
     "bulma": "^0.9.4",
     "classnames": "^2.3.2",
-    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "sass": "^1.62.1"
   },
   "devDependencies": {
-    "@mate-academy/eslint-config-react-typescript": "^1.0.11",
-    "@mate-academy/scripts": "^1.2.8",
+    "@mate-academy/students-ts-config": "*",
     "@types/node": "^17.0.45",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
@@ -32,12 +30,12 @@
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.38.0",
-    "@mate-academy/students-ts-config": "*",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "gh-pages": "^5.0.0",
+    "node-sass": "^7.0.1",
     "typescript": "^4.6.3",
-    "vite": "^4.3.2",
-    "node-sass": "^7.0.1"
+    "vite": "^4.3.2"
   },
   "browserslist": {
     "production": [
@@ -50,12 +48,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "mateAcademy": {
-    "projectType": "reactTypescript",
-    "tests": {
-      "_comment": "Add `cypressComponents: true` to enable component tests",
-      "cypress": false
-    }
   }
 }
